@@ -12,7 +12,6 @@ $(document).ready(function() {
       console.error("app.js: A Bing API key is required to use the Bing maps in production. Get your API key at https://www.bingmapsportal.com/");
   }
 
-
 /**
  * The Globe encapsulates the WorldWindow object (wwd) and provides application
  * specific logic for interacting with layers.
@@ -36,6 +35,9 @@ class Globe {
       category: "background",
       minActiveAltitude: 0
     });
+
+    this.goTo(new WorldWind.Position(43.69, 28.54, 55000));
+
 
   }
 
@@ -126,6 +128,11 @@ class Globe {
   getLayers(category) {
     return this.wwd.layers.filter(layer => layer.category === category);
   }
+
+  // this.wwd.goToAnimator = new WorldWind.GoToAnimator(this.wwd);
+  // goTo(position) {
+  //   this.wwd.goTo(position);
+  // }
 }
 
 
@@ -233,6 +240,7 @@ globe.addLayer(new WorldWind.AtmosphereLayer(), {
 });
 
 
+
   // Create the view models
 let layers = new LayersViewModel(globe);
 let settings = new SettingsViewModel(globe);
@@ -252,3 +260,26 @@ ko.applyBindings(settings, document.getElementById('settings'));
     $(this).closest('.collapse').collapse('hide');
   });
 });
+
+// globe.goToAnimator.goTo(new WorldWind.Position(43.69, 28.54, 55000));
+
+// Geotiff
+ // var geoTiffAddress = "https://zglueck.github.io/workshop-demo/resources/images/geotiff-demo.tif";
+ // var geoTiffReader = new WorldWind.GeoTiffReader(geoTiffAddress);
+ //
+ // var onImageRead = function (canvas) {
+ //
+ //     var surfaceGeoTiff = new WorldWind.SurfaceImage(
+ //         geoTiffReader.metadata.bbox,
+ //         new WorldWind.ImageSource(canvas)
+ //     );
+ //
+ //     var geoTiffLayer = new WorldWind.RenderableLayer("GeoTiff Image");
+ //     globe.addLayer(geoTiffLayer);
+ //     geoTiffLayer.addRenderable(surfaceGeoTiff);
+ //     globe.wwd.redraw();
+ //
+ //     globe.goTo(new WorldWind.Position(43.69, 28.54, 55000));
+ // };
+ //
+ // geoTiffReader.readAsImage(onImageRead);

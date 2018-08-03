@@ -10,6 +10,12 @@ body {
   background-color: #DDDDDD;
 }
 
+.brackets  {
+  color: #DDD; !important
+  font-size: 8; !important
+  font-family: Times; !important
+}
+
 /*Sets the size and style of the globe container*/
 .globe {
   width: 100%;
@@ -78,4 +84,3 @@ Sets the background color of Cards displayed over the globe .globe-card {
   -o-user-select: auto !important;
   pointer-events: auto !important;
 }
-
