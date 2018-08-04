@@ -10,7 +10,7 @@ wwd.addLayer(new WorldWind.StarFieldLayer());
 // var geoTiffAddress = "./assets/geotiff/subset_0_of_S3A_OL_1_EFR____20180727T092500_20180727T092800_20180727T113156_0179_034_036_1980_SVL_O_NR_002.SEN3_C2RCC.tif";
 // var geoTiffAddress = "./assets/geotiff/geotiff-demo.tif";
 // var geoTiffAddress = "./assets/geotiff/color_conc_chll.tif";
-var geoTiffAddress = "./assets/geotiff/small_ting.tif";
+var geoTiffAddress = "assets/geotiff/small_ting.tif";
 
 var geoTiffReader = new WorldWind.GeoTiffReader(geoTiffAddress);
 
