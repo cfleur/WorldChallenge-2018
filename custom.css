@@ -1,6 +1,7 @@
 body {
   /*Account for the height of the navbar component*/
   padding-top: 3.5rem;
+  background-color: #4a7b85;
 }
 
 .about  {
@@ -14,6 +15,17 @@ body {
   color: #DDD; !important
   font-size: 8; !important
   font-family: Times; !important
+}
+
+.jpeg-examples {
+  padding-top: 7rem;
+  max-height: 600px;
+  max-width: 100vw;
+}
+
+.jpeg-examples img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*Sets the size and style of the globe container*/
